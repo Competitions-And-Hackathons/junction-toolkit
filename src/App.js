@@ -38,8 +38,8 @@ function App() {
       gameDataList.sort((a, b) => (a.updatedAt > b.updatedAt) ? -1 : 1)
       setLastestGameData(gameDataList[0]);
       console.log('lastestGameData', lastestGameData)
- 
-     }
+
+    }
     catch (error) {
       console.log('error on fetching game data', error);
     }
@@ -52,7 +52,7 @@ function App() {
   //새로운 game data를 Create한다.
   const createNewGameData = async() => {
     const newGameDataInput = {
-      "id": uuid(),
+      "id": lastestGameData.id,
       "version":newGameData.version,
       "speed":newGameData.speed,
       "tanos":newGameData.tanos,
@@ -154,14 +154,14 @@ function App() {
           <div className="custom_button" onClick={()=> createNewGameData()}> Apply Setting Above </div>
 
           <h1>Movement Estimation</h1>
-          <div className="text_field"> 전사 체력 :
+          <div className="text_field"> sourced I LOVE YOU 1500 :
             <TextField value={testGameData.warrior_attack} 
-              onChange={e => setTestGameData({...testGameData, warrior_attack:e.target.value})} 
+              onChange={e => setTestGameData({...testGameData, sourced_tanos:e.target.value})} 
             /> 
           </div>
-          <div className="text_field"> 보스 체력 : 
+          <div className="text_field"> sourced WhereEver Door : 
             <TextField value={testGameData.boss_health} 
-              onChange={e => setTestGameData({...testGameData, boss_health:e.target.value})} 
+              onChange={e => setTestGameData({...testGameData, sourced_backdoor:e.target.value})} 
             /> 
           </div>
 

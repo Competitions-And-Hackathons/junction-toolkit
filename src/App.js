@@ -115,37 +115,37 @@ function App() {
           </div>
 
           <div className="text_field"> Player Speed :
-            <TextField value={newGameData.version} 
+            <TextField value={newGameData.speed} 
               onChange={e => setNewGameData({...newGameData, speed:e.target.value})} 
             />
           </div>
 
           <div className="text_field"> [Skill Event Percentage] I LOVE YOU 1500  : 
-            <TextField value={newGameData.version} 
+            <TextField value={newGameData.tanos} 
               onChange={e => setNewGameData({...newGameData, tanos:e.target.value})} 
             /> %
           </div>
 
           <div className="text_field"> [Skill Event Percentage] WhereEver Door :
-            <TextField value={newGameData.version} 
+            <TextField value={newGameData.backdoor} 
               onChange={e => setNewGameData({...newGameData, backdoor:e.target.value})} 
             /> %
           </div>
 
           <div className="text_field"> [Skill Event Percentage] MooYaHo :
-            <TextField value={newGameData.version} 
+            <TextField value={newGameData.infinite} 
               onChange={e => setNewGameData({...newGameData, infinite:e.target.value})} 
             /> %
           </div>
 
           <div className="text_field"> [Skill Event Percentage] Just Shoot :
-            <TextField value={newGameData.version} 
+            <TextField value={newGameData.shoot} 
               onChange={e => setNewGameData({...newGameData, shoot:e.target.value})} 
             /> %
           </div>
 
           <div className="text_field"> [Skill Event Percentage] Let`s Boom :
-            <TextField value={newGameData.version} 
+            <TextField value={newGameData.doom} 
               onChange={e => setNewGameData({...newGameData, doom:e.target.value})} 
             /> %
           </div>

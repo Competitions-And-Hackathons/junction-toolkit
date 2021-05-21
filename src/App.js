@@ -99,12 +99,12 @@ function App() {
         <header className="App-header">
           <h1>Current Game Player Settings</h1>
           <div className="text_field"> version : {lastestGameData.version} </div>
-          <div className="text_field"> 플레이어 speed : {lastestGameData.speed} </div>
-          <div className="text_field"> I LOVE YOU 1500 출현 확률 : {lastestGameData.tanos} </div>
-          <div className="text_field"> 어디로든 문 출현 확률 : {lastestGameData.backdoor} </div>
-          <div className="text_field"> MooYaHo 출현 확률 : {lastestGameData.infinite} </div>
-          <div className="text_field"> 안 되겠소 쏩시다! 출현 확률 : {lastestGameData.shoot} </div>
-          <div className="text_field"> 함께 폭사하자 출현 확률 : {lastestGameData.doom} </div>
+          <div className="text_field"> Player Speed : {lastestGameData.speed} </div>
+          <div className="text_field"> [Skill Event Percentage] I LOVE YOU 1500  : {lastestGameData.tanos} % </div>
+          <div className="text_field"> [Skill Event Percentage] WhereEver Door : {lastestGameData.backdoor} % </div>
+          <div className="text_field"> [Skill Event Percentage] MooYaHo : {lastestGameData.infinite} % </div>
+          <div className="text_field"> [Skill Event Percentage] Just Shoot : {lastestGameData.shoot} % </div>
+          <div className="text_field"> [Skill Event Percentage] Let`s Boom : {lastestGameData.doom} % </div>
 
 
           <h1>Edit Game Player Settings</h1>
@@ -114,40 +114,40 @@ function App() {
             /> 
           </div>
 
-          <div className="text_field"> 플레이어 speed : 
+          <div className="text_field"> [Skill Event Percentage] I LOVE YOU 1500  : 
             <TextField value={newGameData.version} 
               onChange={e => setNewGameData({...newGameData, speed:e.target.value})} 
-            /> 
+            /> %
           </div>
 
           <div className="text_field"> I LOVE YOU 1500 출현 확률 : 
             <TextField value={newGameData.version} 
               onChange={e => setNewGameData({...newGameData, tanos:e.target.value})} 
-            /> 
+            /> %
           </div>
 
-          <div className="text_field"> 어디로든 문 출현 확률 : 
+          <div className="text_field"> [Skill Event Percentage] WhereEver Door :
             <TextField value={newGameData.version} 
               onChange={e => setNewGameData({...newGameData, backdoor:e.target.value})} 
-            /> 
+            /> %
           </div>
 
-          <div className="text_field"> MooYaHo 출현 확률 : 
+          <div className="text_field"> [Skill Event Percentage] MooYaHo :
             <TextField value={newGameData.version} 
               onChange={e => setNewGameData({...newGameData, infinite:e.target.value})} 
-            /> 
+            /> %
           </div>
 
-          <div className="text_field"> 안 되겠소 쏩시다! 출현 확률 :
+          <div className="text_field"> [Skill Event Percentage] Just Shoot :
             <TextField value={newGameData.version} 
               onChange={e => setNewGameData({...newGameData, shoot:e.target.value})} 
-            /> 
+            /> %
           </div>
 
-          <div className="text_field"> 함께 폭사하자 출현 확률 :
+          <div className="text_field"> [Skill Event Percentage] Let`s Boom :
             <TextField value={newGameData.version} 
               onChange={e => setNewGameData({...newGameData, doom:e.target.value})} 
-            /> 
+            /> %
           </div>
 
 

@@ -117,7 +117,7 @@ function App() {
           <div className="text_field"> Player Speed :
             <TextField value={newGameData.version} 
               onChange={e => setNewGameData({...newGameData, speed:e.target.value})} 
-            /> %
+            />
           </div>
 
           <div className="text_field"> [Skill Event Percentage] I LOVE YOU 1500  : 

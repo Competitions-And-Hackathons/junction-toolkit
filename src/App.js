@@ -151,9 +151,9 @@ function App() {
           </div>
 
 
-          <div className="custom_button" onClick={()=> createNewGameData()}> 적용하기 </div>
+          <div className="custom_button" onClick={()=> createNewGameData()}> Apply Setting Above </div>
 
-          <h1>Raid Estimation</h1>
+          <h1>Movement Estimation</h1>
           <div className="text_field"> 전사 체력 :
             <TextField value={testGameData.warrior_attack} 
               onChange={e => setTestGameData({...testGameData, warrior_attack:e.target.value})} 

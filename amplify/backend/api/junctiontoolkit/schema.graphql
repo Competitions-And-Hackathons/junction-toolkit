@@ -1,0 +1,10 @@
+type GameSetting @model {
+  id: ID!
+  version: String!
+  speed: Int!
+  tanos: Int!
+  backdoor: Int!
+  infinite: Int!
+  shoot: Int!
+  doom: Int!
+}

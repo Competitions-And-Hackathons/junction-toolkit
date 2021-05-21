@@ -114,13 +114,13 @@ function App() {
             /> 
           </div>
 
-          <div className="text_field"> [Skill Event Percentage] I LOVE YOU 1500  : 
+          <div className="text_field"> Player Speed :
             <TextField value={newGameData.version} 
               onChange={e => setNewGameData({...newGameData, speed:e.target.value})} 
             /> %
           </div>
 
-          <div className="text_field"> I LOVE YOU 1500 출현 확률 : 
+          <div className="text_field"> [Skill Event Percentage] I LOVE YOU 1500  : 
             <TextField value={newGameData.version} 
               onChange={e => setNewGameData({...newGameData, tanos:e.target.value})} 
             /> %

@@ -9,7 +9,7 @@ import {AmplifySignOut, withAuthenticator} from '@aws-amplify/ui-react';
 
 // AWS APIs
 import {listGameSettings} from './graphql/queries'
-import {createGameSetting} from './graphql/mutations'
+import {createGameSetting, updateGameSetting} from './graphql/mutations'
 
 //uuid
 import {v4 as uuid} from 'uuid'
@@ -62,7 +62,9 @@ function App() {
       "doom":newGameData.doom
     }
 
-    await API.graphql(graphqlOperation(createGameSetting, {input: newGameDataInput}));
+    await API.graphql(graphqlOperation(updateGameSetting, {input: newGameDataInput}));
+
+    
     fetchGameData();
   }
 

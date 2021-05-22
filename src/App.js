@@ -74,7 +74,7 @@ function App() {
     // add content type header to object
     myHeaders.append("Content-Type", "application/json");
     // using built in JSON utility package turn object to string and store in a variable
-    var raw = JSON.stringify({"data":`${testGameData.boss_health},${testGameData.warrior_attack}`});
+    var raw = JSON.stringify({"data":`${testGameData.sourced_tanos},${testGameData.sourced_backdoor},${testGameData.sourced_infinite},${testGameData.sourced_shoot},${testGameData.sourced_doom},${testGameData.targeted_tanos},${testGameData.targeted_backdoor},${testGameData.targeted_infinite},${testGameData.targeted_shoot},${testGameData.targeted_doom}`});
     // create a JSON object with parameters for API call and store in a variable
     var requestOptions = {
         method: 'POST',
@@ -82,8 +82,10 @@ function App() {
         body: raw,
         redirect: 'follow'
     };
+
+    
     // make API call with parameters and use promises to get response
-    fetch("https://1dxvyo4vik.execute-api.ap-northeast-1.amazonaws.com/dev", requestOptions)
+    fetch("https://ipnsnrke00.execute-api.ap-northeast-2.amazonaws.com/dev", requestOptions)
     .then(response => response.text())    
     .then(result => (setEstimatedResult(JSON.parse(JSON.parse(result).body))))
     .catch(error => console.log('error', error))
@@ -155,30 +157,70 @@ function App() {
 
           <div className="custom_button" onClick={()=> createNewGameData()}> Apply Setting Above </div>
 
+
+
+      
+
           <h1>Movement Estimation</h1>
-          <div className="text_field"> sourced I LOVE YOU 1500 :
-            <TextField value={testGameData.warrior_attack} 
+          <div className="text_field"> How many times spell I LOVE YOU 1500 :
+            <TextField value={testGameData.sourced_tanos} 
               onChange={e => setTestGameData({...testGameData, sourced_tanos:e.target.value})} 
             /> 
           </div>
-          <div className="text_field"> sourced WhereEver Door : 
-            <TextField value={testGameData.boss_health} 
+          <div className="text_field"> How many times spell WhereEver Door : 
+            <TextField value={testGameData.sourced_backdoor} 
               onChange={e => setTestGameData({...testGameData, sourced_backdoor:e.target.value})} 
+            /> 
+          </div>
+          <div className="text_field"> How many times spell MooYaHo : 
+            <TextField value={testGameData.sourced_infinite} 
+              onChange={e => setTestGameData({...testGameData, sourced_infinite:e.target.value})} 
+            /> 
+          </div>
+          <div className="text_field"> How many times spell Just Shoot : 
+            <TextField value={testGameData.sourced_shoot} 
+              onChange={e => setTestGameData({...testGameData, sourced_shoot:e.target.value})} 
+            /> 
+          </div>
+          <div className="text_field"> How many times spell Let`s Boom : 
+            <TextField value={testGameData.sourced_doom} 
+              onChange={e => setTestGameData({...testGameData, sourced_doom:e.target.value})} 
+            /> 
+          </div>
+
+          <div className="text_field"> How many times be attacked by I LOVE YOU 1500 :
+            <TextField value={testGameData.targeted_tanos} 
+              onChange={e => setTestGameData({...testGameData, targeted_tanos:e.target.value})} 
+            /> 
+          </div>
+          <div className="text_field"> How many times be attacked by WhereEver Door : 
+            <TextField value={testGameData.targeted_backdoor} 
+              onChange={e => setTestGameData({...testGameData, targeted_backdoor:e.target.value})} 
+            /> 
+          </div>
+          <div className="text_field"> How many times be attacked by MooYaHo : 
+            <TextField value={testGameData.targeted_infinite} 
+              onChange={e => setTestGameData({...testGameData, targeted_infinite:e.target.value})} 
+            /> 
+          </div>
+          <div className="text_field"> How many times be attacked by Just Shoot : 
+            <TextField value={testGameData.targeted_shoot} 
+              onChange={e => setTestGameData({...testGameData, targeted_shoot:e.target.value})} 
+            /> 
+          </div>
+          <div className="text_field"> How many times be attacked by Let`s Boom : 
+            <TextField value={testGameData.targeted_doom} 
+              onChange={e => setTestGameData({...testGameData, targeted_doom:e.target.value})} 
             /> 
           </div>
 
 
-          {showButton ? <div className="custom_button" onClick={()=> callAPI()}> 예측하기 </div> :
-            estimatedResult ? <div> 레이드 성공 예상! </div> : <div> 레이드 실패 예상 </div>
+          {showButton ? <div className="custom_button" onClick={()=> callAPI()}> Estimate! </div> :
+              <div> Estimated distance: {estimatedResult} </div>
           }
 
-          {estimatedResult}
-
           
 
-          
-          <h1> Go to AI Studio </h1>
-          <div className="custom_button"> Go! </div>
   
           <h1>Settings</h1>
           <AmplifySignOut/>
